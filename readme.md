@@ -4,7 +4,7 @@
 <li> project setup  -->DONE</li>
 <li> player creation  -->DONE</li>
 <li> physic(gravity,..) -->DONE</li>
-<li> player movement </li>
+<li> player movement -->DONE</li>
 <li> platform + background</li>
 
 
