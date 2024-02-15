@@ -3,7 +3,7 @@
 <ul>
 <li> project setup  -->DONE</li>
 <li> player creation  -->DONE</li>
-<li> physic(gravity,..)</li>
+<li> physic(gravity,..) -->DONE</li>
 <li> player movement </li>
 <li> platform + background</li>
 
