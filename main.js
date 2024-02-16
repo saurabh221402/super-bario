@@ -43,8 +43,44 @@ class Player {
     }
 }
 
+class Obstacle{
+    constructor(x,y){
+        this.position={
+            x,
+            y
+        }
+        this.height=200;
+        this.width=50;
+        this.velocity=10;
+    }
+    draw(){
+        c.fillStyle='blue';
+        c.fillRect(this.position.x,this.position.y,this.width,this.height);
+    }
+    update(){
+        this.draw();
+        this.position.x-=this.velocity;
+    }
+}
+
 //player object
 let player1 =new Player();
+
+//obstacle object
+let obstacle1 = new Obstacle(canva.width,0);
+let obstacle2 = new Obstacle(canva.width,canva.height-150); 
+//random obstacle re-creation
+setInterval(()=> {
+let random_height1=Math.random() * (100) + 100; 
+let random_height2=Math.random()*60;  
+obstacle1 = new Obstacle(canva.width,-random_height2);
+obstacle2 = new Obstacle(canva.width,canva.height-random_height1); 
+
+}
+,6000,)
+
+
+//keys press object
 const keys={
     right:false,
     left:false,
@@ -73,12 +109,16 @@ function animate()
     else
     player1.velocity.x=0;
 
+    //obstacles
+    obstacle1.update();
+    obstacle2.update();
+
 }
 animate();
 
 
 
-
+//on keypress
 addEventListener('keydown' , (e) => { 
     //console.log(e.keyCode);
     let x=e.keyCode;
@@ -121,7 +161,7 @@ addEventListener('keydown' , (e) => {
         }
 
 })
-
+//on keyrelease
 addEventListener('keyup' , (e) => { 
     //console.log(e.keyCode);
     let x=e.keyCode;
